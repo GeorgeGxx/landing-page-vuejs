@@ -4,8 +4,14 @@ services:
     container_name: frontend_app
     image: nodeimage
     restart: always
+    networks:
+      - frontend
     build:
       context: ./
       dockerfile: Dockerfile    
     ports:
       - 80:80
+
+networks:
+  frontend:
+    name: frontend
